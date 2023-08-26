@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# Vue 3 + Vite + Cesium 学习总结用Demo
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+使用Vue3 + Vite + Cesium 1.84.0 构建的一个Demo项目，用于个人学习Vue + Cesium，将一些之前写的使用原生Cesium实现的功能封装为Vue组件。
 
-## Recommended IDE Setup
+### 已有功能
+- 添加示例数据（Gltf、3D Tiles、GeoJson（分层设色））
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### 预计添加功能，缓慢施工中……
+- 空间分析
+  - 缓冲区分析
+  - 通视分析
+  - 模型剖切
+  - 剖面分析
+  - 天际线分析
+- （类）图层管理器
+- 小车漫游
+- 消防模拟（粒子系统应用）
+- 天气模拟（雨、雪、雾）
