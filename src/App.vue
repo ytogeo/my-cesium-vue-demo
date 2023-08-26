@@ -3,7 +3,9 @@
     import { onMounted, ref } from "vue"; //引入生命周期
     import * as Cesium from "cesium";
     import global from "./global.vue";
-    import DataLoader from "./views/MenuOfDataLoader.vue";
+    import MenuOfDataLoader from "./views/MenuOfDataLoader.vue";
+    import MenuOfAnalysis from "./views/MenuOfAnalysis.vue";
+    import MapButtonGroup from "./views/MapButtonGroup/MapButtonGroup.vue";
     //武汉经纬度
     let lon = 114.304569;
     let lat = 30.593354;
@@ -58,16 +60,23 @@
 </script>
 
 <template>
+    <!--顶部左侧：LOGO-->
     <el-menu class="header-menu" id="left-menu" mode="horizontal" :ellipsis="false">
         <!--引入DataLoader组件-->
         <el-menu-item><i class="demo-icon"></i>我的CesiumDemo</el-menu-item>
     </el-menu>
-
+    <!--顶部右侧：操作菜单-->
     <el-menu class="header-menu" id="right-menu" mode="horizontal" :ellipsis="false">
-        <!--引入DataLoader组件-->
-        <DataLoader></DataLoader>
+        <!--菜单：引入各Menu组件-->
+        <MenuOfAnalysis></MenuOfAnalysis>
+        <MenuOfDataLoader></MenuOfDataLoader>
     </el-menu>
+    <!--页面主体：Cesium容器-->
     <div id="cesium-container"></div>
+    <!--页面底部：地图按钮组-->
+    <div id="map-buttons">
+        <MapButtonGroup></MapButtonGroup>
+    </div>
 </template>
 
 <style scoped>
@@ -93,5 +102,12 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    #map-buttons {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        z-index: 999;
     }
 </style>

@@ -4,9 +4,9 @@
 <template style="padding-right: 50px">
     <el-sub-menu index="1">
         <template #title>添加数据</template>
-        <el-menu-item @click="addGltf">GLTF</el-menu-item>
-        <el-menu-item @click="add3DTiles">3D Tiles</el-menu-item>
-        <el-menu-item @click="addGeojson">GeoJson</el-menu-item>
+        <el-menu-item @click="addGltf">示例GLTF</el-menu-item>
+        <el-menu-item @click="add3DTiles">示例3D Tiles</el-menu-item>
+        <el-menu-item @click="addGeojson">示例GeoJson</el-menu-item>
     </el-sub-menu>
 </template>
 
