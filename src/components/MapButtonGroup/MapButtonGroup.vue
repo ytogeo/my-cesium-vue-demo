@@ -1,3 +1,4 @@
+<!--地图操作按钮组的组件。问题：组件要拆到什么程度合适呢？-->
 <template>
     <el-button-group size="large">
         <el-row> <MapButtonWeather></MapButtonWeather></el-row>

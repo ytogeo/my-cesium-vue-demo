@@ -99,3 +99,10 @@ export const addGeojson = () => {
         }
     });
 };
+
+export const removeAllData = () => {
+    let viewer = global.viewer;
+    viewer.dataSources.removeAll();
+    viewer.entities.removeAll();
+    viewer.scene.primitives.removeAll();
+}
