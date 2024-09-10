@@ -1,7 +1,7 @@
 <!--切换图层地图按钮的组件-->
 
-<script lang="ts" setup>
-import global from "../../global.vue";
+<script setup>
+import store from "../../store/store.js";
 import ChangeLayerTool from "../../cesiumUtils/MapButtonGroup/mapButtonChangeLayer";
 //引入静态图片资源（require对vite不管用，使用import）
 import darkMapSample from "../../assets/dark_map_sample.jpg";
@@ -20,7 +20,8 @@ const selectedLayer = ref("1")//控制选中的图层的响应式变量
 </script>
 <template>
     <!--打开图层切换弹窗时，使用加载好的global.viewer初始化图层切换tool，否则会读不到——这个viewer获取方式有没有问题？-->
-    <el-button class="map-button" title="图层切换" circle @click="dialogVisible = true; changeLayerTool.init(global.viewer)">
+    <el-button class="map-button" title="图层切换" circle
+        @click="dialogVisible = true; changeLayerTool.init(store.state.viewer)">
         <el-icon :size="20">
             <Files />
         </el-icon></el-button>

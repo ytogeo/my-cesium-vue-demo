@@ -1,8 +1,7 @@
 import * as Cesium from "cesium";
-import global from "../../global.vue";
-
+import store from "../../store/store.js";
 export const addGltf = () => {
-    let viewer = global.viewer;
+    let viewer = store.state.viewer;
     //武汉经纬度
     let lon = 114.304569;
     let lat = 30.593354;
@@ -19,7 +18,7 @@ export const addGltf = () => {
     viewer.flyTo(plane);
 };
 export const add3DTiles = () => {
-    let viewer = global.viewer;
+    let viewer = store.state.viewer;
     //添加武汉市建筑tileset
     viewer.scene.primitives.add(
         new Cesium.Cesium3DTileset({
@@ -29,7 +28,7 @@ export const add3DTiles = () => {
 };
 
 export const addGeojson = () => {
-    let viewer = global.viewer;
+    let viewer = store.state.viewer;
     //返回的是一个加载完成的Promise
     let geojsonCompletePromise = new Cesium.GeoJsonDataSource.load("../../data/geojson/terrainGraph_lines.json", {
         stroke: Cesium.Color.HOTPINK,
@@ -101,7 +100,7 @@ export const addGeojson = () => {
 };
 
 export const removeAllData = () => {
-    let viewer = global.viewer;
+    let viewer = store.state.viewer;
     viewer.dataSources.removeAll();
     viewer.entities.removeAll();
     viewer.scene.primitives.removeAll();

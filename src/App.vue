@@ -2,7 +2,7 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import { onMounted, ref } from "vue"; //引入生命周期
 import * as Cesium from "cesium";
-import global from "./global.vue";
+import store     from "./store/store.js"
 // 引入界面组件
 import MenuOfDataLoader from "./components/MenuOfDataLoader.vue";
 import MenuOfAnalysis from "./components/MenuOfAnalysis.vue";
@@ -38,10 +38,10 @@ function init() {
     });
     viewer.imageryLayers.removeAll();//清除默认影像图层
     viewer.scene.globe.depthTestAgainstTerrain = true;
-    global.viewer = viewer;
+    store.commit("setViewer", viewer);
     // 加载自己引入的影像与注记图层
-    viewer.imageryLayers.addImageryProvider(global.tdtLayer);
-    viewer.imageryLayers.addImageryProvider(global.tdtNoteLayer);
+    viewer.imageryLayers.addImageryProvider(store.state.tdtLayer);
+    viewer.imageryLayers.addImageryProvider(store.state.tdtNoteLayer);
     //修改摄像头位置（初始）
     viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(lon, lat, 15000.0),
