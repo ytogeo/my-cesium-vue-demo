@@ -24,7 +24,7 @@ const store = new Vuex.Store({
             maximumLevel: 18,
         }),
     },
-    //mutations: 通过调用store.commit('xxx')，调用mutation中的方法，更改store中的值
+    //mutations: 通过调用store.commit('xxx')，调用mutation中的方法，更改store中state内变量的值
     mutations: {
         //调用：store.commit('setViewer', viewer)
         setViewer(state, viewer) {

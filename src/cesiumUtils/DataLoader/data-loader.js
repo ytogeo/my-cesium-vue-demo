@@ -1,7 +1,9 @@
 import * as Cesium from "cesium";
 import store from "../../store/store.js";
+import { toRaw } from '@vue/reactivity'
 export const addGltf = () => {
-    let viewer = store.state.viewer;
+    //proxy变量解包，使用toRow方法获取原始对象——使用vuex管理的全局变量不能直接用.访问，不然只能拿到一个proxy变量，并非原始的那个东西？
+    let viewer = toRaw(store.state.viewer);
     //武汉经纬度
     let lon = 114.304569;
     let lat = 30.593354;
@@ -15,7 +17,8 @@ export const addGltf = () => {
             minimumPixelSize: 100.0,
         },
     });
-    viewer.flyTo(plane);
+    console.log(viewer)
+    viewer.flyTo(plane)
 };
 export const add3DTiles = () => {
     let viewer = store.state.viewer;

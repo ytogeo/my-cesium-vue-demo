@@ -2,7 +2,7 @@
 
 使用Vue3 + Vite + Cesium 1.84.0 构建的一个Demo项目，用于个人学习Vue + Cesium，将一些之前写的使用原生Cesium实现的功能封装为Vue组件。
 ### 环境配置
-> ` npm install`
+` npm install`
 ### 已有功能
 - 添加示例数据（Gltf、3D Tiles、GeoJson（分层设色））
 - 影像图层、矢量图层切换
