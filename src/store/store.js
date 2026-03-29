@@ -9,17 +9,17 @@ const store = new Vuex.Store({
     state: {
         viewer: null,
         darkMap: new Cesium.MapboxStyleImageryProvider({
-            username: "houchaogis",
-            styleId: "clg7s6veu000k01p3q9xjadf2",
-            accessToken: "pk.eyJ1IjoiaG91Y2hhb2dpcyIsImEiOiJjbGc3c3Njem4wbXVqM3NxeWFpbnJleHZnIn0.WRlYOVdh-05m6LJTt9u_IQ",
+            username: import.meta.env.VITE_MAPBOX_USERNAME,
+            styleId: import.meta.env.VITE_MAPBOX_STYLE_ID,
+            accessToken: import.meta.env.VITE_MAPBOX_TOKEN,
         }),
         tdtLayer: new Cesium.UrlTemplateImageryProvider({
-            url: "http://t7.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=49b046e65d94afd82ff0b5b7b69012fa",
+            url: `https://t7.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=${import.meta.env.VITE_TIANDITU_TOKEN}`,
             minimumLevel: 3,
             maximumLevel: 18,
         }),
         tdtNoteLayer: new Cesium.UrlTemplateImageryProvider({
-            url: "http://t7.tianditu.gov.cn/cia_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=49b046e65d94afd82ff0b5b7b69012fa",
+            url: `https://t7.tianditu.gov.cn/cia_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=${import.meta.env.VITE_TIANDITU_TOKEN}`,
             minimumLevel: 3,
             maximumLevel: 18,
         }),

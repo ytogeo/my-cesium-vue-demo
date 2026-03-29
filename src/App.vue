@@ -10,9 +10,7 @@ import MapButtonGroup from "./components/MapButtonGroup/MapButtonGroup.vue";
 //武汉经纬度
 let lon = 114.304569;
 let lat = 30.593354;
-let defaultAccessToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyYTQ1YWM4Yi1jMWQ2LTRjODktYWUwZi1iN2E3MGY0YTc4NzUiLCJpZCI6MTI2OTc3LCJpYXQiOjE2Nzc3NDg2MTB9.1sM-0Hkm_FzlYZFqnTQlYyLVWZcJqg8EelxDssdjl28";
-Cesium.Ion.defaultAccessToken = defaultAccessToken; //使用Cesium @1.84.0
+Cesium.Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_ION_TOKEN; //使用Cesium @1.84.0
 
 // 生命周期钩子：mounted-页面加载完成后执行cesium初始化init函数
 onMounted(() => {
